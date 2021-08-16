@@ -10,7 +10,7 @@ set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
 set encoding=utf-8
-set number relativenumber
+"set number relativenumber
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -28,7 +28,7 @@ set shiftwidth=2
 set wildmenu
 set nomodeline
 set signcolumn=yes
-
+set inccommand=split
 "let mapleader="/\\"
 
 " Use case insensitive search, except when using capital letters
@@ -127,6 +127,10 @@ inoremap <leader>S <c-o>"_S
 inoremap <leader>I <c-o>"_I
 inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
+
+nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 set smartindent
@@ -177,7 +181,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-commentary'
-
+Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
