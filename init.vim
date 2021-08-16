@@ -110,6 +110,7 @@ inoremap <leader>c <c-o>"_c
 nnoremap <leader>gc :G checkout 
 nnoremap <leader>gP :G push 
 nnoremap <leader>gp :G pull 
+nnoremap <leader>gs :G status<cr>
 
 inoremap <leader>x <c-o>"_x
 inoremap <leader>d <c-o>"_d
@@ -178,8 +179,11 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+" São usados juntos
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
 Plugin 'tpope/vim-commentary'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-airline/vim-airline'
