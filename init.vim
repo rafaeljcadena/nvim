@@ -111,6 +111,10 @@ nnoremap <leader>gc :G checkout
 nnoremap <leader>gP :G push 
 nnoremap <leader>gp :G pull 
 nnoremap <leader>gs :G status<cr>
+nnoremap <leader>gm :G merge 
+
+nnoremap <leader>. :vertical resize +5<cr>
+nnoremap <leader>, :vertical resize -5<cr>
 
 inoremap <leader>x <c-o>"_x
 inoremap <leader>d <c-o>"_d
@@ -124,10 +128,11 @@ inoremap <leader>o <c-o>o
 inoremap <leader>O <c-o>O
 inoremap <leader>a <c-o>a
 inoremap <leader>A <c-o>A
-inoremap <leader>S <c-o>"_S
-inoremap <leader>I <c-o>"_I
+inoremap <leader>S <c-o>S
+inoremap <leader>I <c-o>I
 inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
+inoremap <leader>h <c-o>i
 
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
