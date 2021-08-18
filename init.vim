@@ -34,7 +34,7 @@ set inccommand=split
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set incsearch
-set hlsearch
+"set hlsearch
 set smartcase
 set showmatch
 set scrolloff=8
@@ -49,7 +49,7 @@ set autoread
 nnoremap <leader>zf zfat
 nnoremap <C-l> :nohlsearch<CR>
 nnoremap Y y$
-nnoremap <leader>g :Ge:<cr>
+nnoremap <leader>gg :Ge:<cr>
 nnoremap <leader>d :Gvdiff<cr>
 nnoremap <leader>gt :diffget //3
 nnoremap <leader>go :diffget //2
@@ -66,8 +66,14 @@ nnoremap <leader>Y gg"+yG
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
-noremap n nzzzv
-noremap N Nzzzv
+cnoremap <c-i> <cr>i
+cnoremap <c-e> <cr>ea
+cnoremap <c-c> <cr>"_c
+cnoremap <leader>c <cr>"_c
+
+"noremap n nzzzv
+"noremap N Nzzzv
+"
 "noremap <C-u> <C-u>zz
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
@@ -133,6 +139,8 @@ inoremap <leader>I <c-o>I
 inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
 inoremap <leader>h <c-o>i
+inoremap <leader>l <c-o>l
+inoremap <c-s> <esc><c-s>
 
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
@@ -168,6 +176,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+let g:indent_guides_enable_on_vim_startup = 1
+"
 " If you want :UltiSnipsEdit to split your window.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -184,6 +194,7 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " São usados juntos
 Plugin 'SirVer/ultisnips'
