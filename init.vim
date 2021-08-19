@@ -70,7 +70,9 @@ cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
 cnoremap <leader>c <cr>"_c
-
+cnoremap <c-s> <cr>"_s
+cnoremap <leader>s <cr>"_s
+"
 "noremap n nzzzv
 "noremap N Nzzzv
 "
@@ -119,8 +121,8 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge 
 
-nnoremap <leader>. :vertical resize +5<cr>
-nnoremap <leader>, :vertical resize -5<cr>
+nnoremap <silent><leader>. :vertical resize +5<cr>
+nnoremap <silent><leader>, :vertical resize -5<cr>
 
 inoremap <leader>x <c-o>"_x
 inoremap <leader>d <c-o>"_d
@@ -140,8 +142,10 @@ inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
 inoremap <leader>h <c-o>i
 inoremap <leader>l <c-o>l
-inoremap <c-s> <esc><c-s>
+inoremap <c-s> <esc>
 
+nnoremap x "_dl
+nnoremap X "_dh
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
