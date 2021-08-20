@@ -47,10 +47,10 @@ set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
 nnoremap <leader>zf zfat
-nnoremap <C-l> :nohlsearch<CR>
+nnoremap <silent><C-l> :nohlsearch<CR>
 nnoremap Y y$
-nnoremap <leader>gg :Ge:<cr>
-nnoremap <leader>d :Gvdiff<cr>
+nnoremap <silent><leader>gg :Ge:<cr>
+nnoremap <silent><leader>d :Gvdiff<cr>
 nnoremap <leader>gt :diffget //3
 nnoremap <leader>go :diffget //2
 " center view on the search result
@@ -69,7 +69,10 @@ vnoremap <leader>d "_d
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
+cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
+cnoremap <leader>e <cr>ea
+cnoremap <leader>E <cr>Ea
 cnoremap <c-s> <cr>"_s
 cnoremap <leader>s <cr>"_s
 "
@@ -85,13 +88,15 @@ nmap <leader>t :BTags<CR>
 nmap <leader>w :BufOnly<CR>
 nmap <C-f> :Rg<space>
 nmap <leader>c :changes<CR>
-nmap <leader>n :cn<CR>
-nmap <leader>m :cp<CR>
+nnoremap <leader>N :cfirst<CR>
+nnoremap <leader>M :clast<CR>
+nnoremap <leader>n :cn<CR>
+nnoremap <leader>m :cp<CR>
 nmap <silent> <leader>s :AutoSaveToggle<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-Q> :q<CR>
-nnoremap <C-q> :bd<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap <silent><C-q> :bd<CR>
+nnoremap <silent><Leader>f :NERDTreeFind<CR>
 nmap - `.zz
 nmap <Leader>r :%s///gc<Left><Left><Left>
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -143,6 +148,7 @@ inoremap <leader>F <c-o>F
 inoremap <leader>h <c-o>i
 inoremap <leader>l <c-o>l
 inoremap <c-s> <esc>
+inoremap <c-c> <c-o>
 
 nnoremap x "_dl
 nnoremap X "_dh
@@ -153,6 +159,9 @@ vmap <Tab> >gv
 vmap <S-Tab> <gv
 set smartindent
 set nocompatible              " be iMproved, required
+
+" Corrige caracteres inválidos quando copio para fora o NeoVim
+let $LANG='en_US.UTF-8'
 
 let g:auto_save = 1
 filetype off                  " required
@@ -181,6 +190,15 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Trigger a highlight only when pressing f and F.
+" let g:qs_highlight_on_keys = ['f', 'F']
+
+
+
 "
 " If you want :UltiSnipsEdit to split your window.
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -199,7 +217,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
-
+Plugin 'unblevable/quick-scope'
 " São usados juntos
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
