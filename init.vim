@@ -236,4 +236,11 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Força os arquivos javascript a ficar com a syntax javascriptreact para
+" funcionar a indentação correta
+augroup javascript_folding
+    au!
+    au FileType javascript.jsx setlocal filetype=javascriptreact
+augroup END
+
 colorscheme gruvbox
