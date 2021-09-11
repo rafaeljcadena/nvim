@@ -117,6 +117,7 @@ inoremap kj <ESC>
 "inoremap <leader>w <esc>v_di
 inoremap <leader>d0 <c-o>"_d0<c-f>
 inoremap <leader>c <c-o>"_c
+inoremap <leader>C <c-o>"_C
 "inoremap <leader>ce <c-o>"_ce
 "inoremap <leader>cE <c-o>"_cE
 
@@ -131,6 +132,7 @@ nnoremap <silent><leader>, :vertical resize -5<cr>
 
 inoremap <leader>x <c-o>"_x
 inoremap <leader>d <c-o>"_d
+inoremap <leader>D <c-o>"_D
 inoremap <leader>B <c-o>B
 inoremap <leader>b <c-o>b
 inoremap <leader>W <c-o>W
