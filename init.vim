@@ -34,7 +34,6 @@ set inccommand=split
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set incsearch
-"set hlsearch
 set smartcase
 set showmatch
 set scrolloff=8
@@ -71,10 +70,12 @@ cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
 cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
+cnoremap <leader>d <cr>"_d
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
 cnoremap <c-s> <cr>"_s
 cnoremap <leader>s <cr>"_s
+cnoremap <leader>S <cr>"_S
 "
 "noremap n nzzzv
 "noremap N Nzzzv
@@ -85,7 +86,7 @@ nnoremap <C-P> :GFiles<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>l :BLines<CR>
 nmap <leader>t :BTags<CR>
-nmap <leader>w :BufOnly<CR>
+nmap <silent><leader>w :BufOnly<CR>
 nmap <C-f> :Rg<space>
 nmap <leader>c :changes<CR>
 nnoremap <leader>N :cfirst<CR>
@@ -94,6 +95,7 @@ nnoremap <leader>n :cn<CR>
 nnoremap <leader>m :cp<CR>
 nmap <silent> <leader>s :AutoSaveToggle<CR>
 nnoremap <C-s> :w<CR>
+nnoremap <C-s>a :wa<CR>
 nnoremap <C-Q> :q<CR>
 nnoremap <silent><C-q> :bd<CR>
 nnoremap <silent><Leader>f :NERDTreeFind<CR>
@@ -149,6 +151,8 @@ inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
 inoremap <leader>h <c-o>i
 inoremap <leader>l <c-o>l
+inoremap <leader>_ <c-o>_
+inoremap <leader>y <c-o>y
 inoremap <c-s> <esc>
 inoremap <c-c> <c-o>
 
@@ -244,5 +248,10 @@ augroup javascript_folding
     au!
     au FileType javascript.jsx setlocal filetype=javascriptreact
 augroup END
-
 colorscheme gruvbox
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor+=i:block-blinkon100-Cursor
+set guicursor+=n-v-c:block-blinkon100-Cursor
+" set guicursor+=n-v-c-i:blinkon100
