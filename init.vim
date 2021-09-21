@@ -41,6 +41,8 @@ set autoindent
 set guifont=Fira\ Code:h14
 set confirm
 
+set nohlsearch
+
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
 set ttyfast
 set autoread
@@ -60,7 +62,7 @@ vnoremap <leader>p "_dP
 " next greatest remap ever : asbjornHaland
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
+nnoremap <leader>Y gg"+yG<c-o>
 
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
@@ -71,6 +73,7 @@ cnoremap <c-c> <cr>"_c
 cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
 cnoremap <leader>d <cr>"_d
+cnoremap <leader>D <cr>"_D
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
 cnoremap <c-s> <cr>"_s
@@ -133,6 +136,7 @@ nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
 
 inoremap <leader>x <c-o>"_x
+inoremap <leader>s <c-o>"_s
 inoremap <leader>d <c-o>"_d
 inoremap <leader>D <c-o>"_D
 inoremap <leader>B <c-o>B
@@ -224,6 +228,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'unblevable/quick-scope'
+
 " São usados juntos
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
