@@ -43,7 +43,9 @@ set confirm
 
 set nohlsearch
 
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+set list
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+
 set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
@@ -74,6 +76,7 @@ cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
 cnoremap <leader>d <cr>"_d
 cnoremap <leader>D <cr>"_D
+cnoremap <leader>a <cr>a
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
 cnoremap <c-s> <cr>"_s
@@ -126,11 +129,11 @@ inoremap <leader>C <c-o>"_C
 "inoremap <leader>ce <c-o>"_ce
 "inoremap <leader>cE <c-o>"_cE
 
-nnoremap <leader>gc :G checkout 
-nnoremap <leader>gP :G push 
-nnoremap <leader>gp :G pull 
+nnoremap <leader>gc :G checkout
+nnoremap <leader>gP :G push
+nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
-nnoremap <leader>gm :G merge 
+nnoremap <leader>gm :G merge
 
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
@@ -184,7 +187,8 @@ let g:airline#extensions#bufferline#enabled = 1
 
 "  call AutoHighlightToggle()
 let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
-
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
+let g:ale_fix_on_save = 1
 
 if (has("termguicolors"))
   set termguicolors
