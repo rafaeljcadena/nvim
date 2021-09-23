@@ -75,6 +75,7 @@ vnoremap <leader>d "_d
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
+cnoremap <leader>i <cr>i
 cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
 cnoremap <leader>d <cr>"_d
@@ -124,14 +125,15 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 map <CR> O<Esc>
 map <C-b> :NERDTreeToggle<CR>
-inoremap kj <ESC>
+" inoremap kj <ESC>
 "inoremap <leader>w <esc>v_di
 inoremap <leader>d0 <c-o>"_d0<c-f>
 inoremap <leader>c <c-o>"_c
 inoremap <leader>C <c-o>"_C
 "inoremap <leader>ce <c-o>"_ce
 "inoremap <leader>cE <c-o>"_cE
-
+nnoremap <c-e> 5<c-e>
+nnoremap <c-y> 5<c-y>
 nnoremap <leader>gc :G checkout
 nnoremap <leader>gP :G push
 nnoremap <leader>gp :G pull
@@ -269,10 +271,10 @@ augroup javascript_folding
 augroup END
 colorscheme gruvbox
 
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-set guicursor+=n-v-c:block-blinkon100-Cursor
-set guicursor+=i:block-blinkon100-iCursor
+highlight Cursor guifg=white guibg=Black
+" highlight iCursor guifg=white guibg=DarkMagenta
+set guicursor=n-v-c-i:block-blinkon100-Cursor
+" set guicursor+=i:block-blinkon100-iCursor
 
 silent function! OSX()
     return has('macunix')
