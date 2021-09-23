@@ -168,7 +168,9 @@ inoremap <leader>S <c-o>S
 inoremap <leader>I <c-o>I
 inoremap <leader>f <c-o>f
 inoremap <leader>F <c-o>F
-inoremap <leader>h <c-o>i
+inoremap <leader>p <c-o>p
+inoremap <leader>P <c-o>P
+inoremap <leader>h <c-o>h
 inoremap <leader>l <c-o>l
 inoremap <leader>_ <c-o>_
 inoremap <leader>y <c-o>y
@@ -243,7 +245,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'unblevable/quick-scope'
+" Plugin 'unblevable/quick-scope'
 
 " São usados juntos
 Plugin 'SirVer/ultisnips'
