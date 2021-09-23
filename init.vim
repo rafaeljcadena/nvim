@@ -29,7 +29,7 @@ set wildmenu
 set nomodeline
 set signcolumn=yes
 set inccommand=split
-"let mapleader="/\\"
+let mapleader=","
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set incsearch
@@ -47,7 +47,7 @@ set backspace=indent,eol,start
 set complete-=i
 
 " set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 
 set ttyfast
 set autoread
@@ -271,6 +271,15 @@ colorscheme gruvbox
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
-set guicursor+=i:block-blinkon100-Cursor
 set guicursor+=n-v-c:block-blinkon100-Cursor
-" set guicursor+=n-v-c-i:blinkon100
+set guicursor+=i:block-blinkon100-iCursor
+
+silent function! OSX()
+    return has('macunix')
+endfunction
+silent function! LINUX()
+    return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+    return  (has('win32') || has('win64'))
+endfunction
