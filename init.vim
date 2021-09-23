@@ -21,7 +21,7 @@ set nu
 set hidden
 set ruler
 set cursorline
-set laststatus=1
+set laststatus=2
 set tabstop=2
 set shiftwidth=2
 "set clipboard=unnamed
@@ -30,7 +30,6 @@ set nomodeline
 set signcolumn=yes
 set inccommand=split
 "let mapleader="/\\"
-
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set incsearch
@@ -40,11 +39,15 @@ set scrolloff=8
 set autoindent
 set guifont=Fira\ Code:h14
 set confirm
-
+set history=500
 set nohlsearch
 
 set list
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+set backspace=indent,eol,start
+set complete-=i
+
+" set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
 set ttyfast
 set autoread
@@ -137,6 +140,13 @@ nnoremap <leader>gm :G merge
 
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
+
+if empty(mapcheck('<C-U>', 'i'))
+  inoremap <C-U> <C-G>u<C-U>
+endif
+if empty(mapcheck('<C-W>', 'i'))
+  inoremap <C-W> <C-G>u<C-W>
+endif
 
 inoremap <leader>x <c-o>"_x
 inoremap <leader>s <c-o>"_s
