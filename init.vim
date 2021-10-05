@@ -70,6 +70,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG<c-o>
 
 nnoremap <leader>d "_d
+nnoremap <leader>D "_D
 vnoremap <leader>d "_d
 
 cnoremap <c-i> <cr>i
@@ -83,7 +84,6 @@ cnoremap <leader>D <cr>"_D
 cnoremap <leader>a <cr>a
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
-cnoremap <c-s> <cr>"_s
 cnoremap <leader>s <cr>"_s
 cnoremap <leader>S <cr>"_S
 "
@@ -91,6 +91,7 @@ cnoremap <leader>S <cr>"_S
 "noremap N Nzzzv
 "
 "noremap <C-u> <C-u>zz
+nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
 nmap <leader>b :Buffers<CR>
@@ -104,8 +105,7 @@ nnoremap <leader>M :clast<CR>
 nnoremap <leader>n :cn<CR>
 nnoremap <leader>m :cp<CR>
 nmap <silent> <leader>s :AutoSaveToggle<CR>
-nnoremap <C-s> :w<CR>
-nnoremap <C-s>a :wa<CR>
+nnoremap <c-s> :w<CR>
 nnoremap <C-Q> :q<CR>
 nnoremap <silent><C-q> :bd<CR>
 nnoremap <silent><Leader>f :NERDTreeFind<CR>
@@ -150,6 +150,7 @@ if empty(mapcheck('<C-W>', 'i'))
   inoremap <C-W> <C-G>u<C-W>
 endif
 
+inoremap <leader>: <c-o>:
 inoremap <leader>x <c-o>"_x
 inoremap <leader>s <c-o>"_s
 inoremap <leader>d <c-o>"_d
@@ -174,7 +175,7 @@ inoremap <leader>h <c-o>h
 inoremap <leader>l <c-o>l
 inoremap <leader>_ <c-o>_
 inoremap <leader>y <c-o>y
-inoremap <c-s> <esc>
+inoremap <c-s> <esc><c-s>
 inoremap <c-c> <c-o>
 
 nnoremap x "_dl
@@ -202,7 +203,7 @@ let g:airline#extensions#bufferline#enabled = 1
 "  call AutoHighlightToggle()
 let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 if (has("termguicolors"))
   set termguicolors
