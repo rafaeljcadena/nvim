@@ -144,6 +144,8 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
 
