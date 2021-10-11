@@ -55,7 +55,7 @@ set autoread
 nnoremap <TAB> :bnext<cr>
 nnoremap <S-TAB> :bprevious<cr>
 nnoremap <leader>zf zfat
-nnoremap <silent><C-l> :nohlsearch<CR>
+nnoremap <C-l> :set nohlsearch!<CR>
 nnoremap Y y$
 nnoremap <silent><leader>gg :Ge:<cr>
 nnoremap <silent><leader>d :Gvdiff<cr>
@@ -144,8 +144,8 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
 
@@ -208,7 +208,7 @@ let g:airline#extensions#bufferline#enabled = 1
 "  call AutoHighlightToggle()
 let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 if (has("termguicolors"))
   set termguicolors
