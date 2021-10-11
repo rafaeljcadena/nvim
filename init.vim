@@ -52,6 +52,8 @@ set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
+nnoremap <TAB> :bnext<cr>
+nnoremap <S-TAB> :bprevious<cr>
 nnoremap <leader>zf zfat
 nnoremap <silent><C-l> :nohlsearch<CR>
 nnoremap Y y$
@@ -70,7 +72,9 @@ vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG<c-o>
 
 nnoremap <leader>d "_d
+nnoremap <leader>D "_D
 vnoremap <leader>d "_d
+vnoremap <leader>D "_D
 
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
@@ -182,15 +186,15 @@ nnoremap X "_dh
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
-vmap <Tab> >gv
-vmap <S-Tab> <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 set smartindent
 set nocompatible              " be iMproved, required
 
 " Corrige caracteres inválidos quando copio para fora o NeoVim
 let $LANG='en_US.UTF-8'
 
-let g:auto_save = 1
+" let g:auto_save = 1
 filetype off                  " required
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -202,7 +206,7 @@ let g:airline#extensions#bufferline#enabled = 1
 "  call AutoHighlightToggle()
 let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 if (has("termguicolors"))
   set termguicolors
@@ -253,8 +257,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
