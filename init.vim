@@ -22,6 +22,7 @@ set hidden
 set ruler
 set cursorline
 set laststatus=2
+set noshowmode
 set tabstop=2
 set shiftwidth=2
 "set clipboard=unnamed
@@ -156,6 +157,7 @@ if empty(mapcheck('<C-W>', 'i'))
   inoremap <C-W> <C-G>u<C-W>
 endif
 
+inoremap <leader>k <c-o>k
 inoremap <leader>x <c-o>"_x
 inoremap <leader>s <c-o>"_s
 inoremap <leader>d <c-o>"_d
@@ -259,8 +261,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
