@@ -111,8 +111,8 @@ nnoremap <leader>m :cp<CR>
 nmap <silent> <leader>s :AutoSaveToggle<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-s>a :wa<CR>
-nnoremap <C-Q> :q<CR>
-nnoremap <silent><C-q> :bd<CR>
+" nnoremap <leader>q :q<CR>
+nnoremap <silent><leader>q :bd<CR>
 nnoremap <silent><Leader>f :NERDTreeFind<CR>
 nmap - `.zz
 nmap <Leader>r :%s///gc<Left><Left><Left>
