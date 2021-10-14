@@ -55,6 +55,7 @@ set autoread
 nnoremap <leader>zf zfat
 nnoremap <silent><C-l> :nohlsearch<CR>
 nnoremap Y y$
+nnoremap <silent><leader>gb :G blame<cr>
 nnoremap <silent><leader>gg :Ge:<cr>
 nnoremap <silent><leader>d :Gvdiff<cr>
 nnoremap <leader>gt :diffget //3
@@ -76,6 +77,8 @@ vnoremap <leader>d "_d
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
+cnoremap <leader>v <cr>v
+cnoremap <leader>y <cr>y
 cnoremap <leader>i <cr>i
 cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
@@ -191,7 +194,7 @@ set nocompatible              " be iMproved, required
 " Corrige caracteres inválidos quando copio para fora o NeoVim
 let $LANG='en_US.UTF-8'
 
-let g:auto_save = 1
+" let g:auto_save = 1
 filetype off                  " required
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#enabled = 1
