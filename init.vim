@@ -22,6 +22,7 @@ set hidden
 set ruler
 set cursorline
 set laststatus=2
+set noshowmode
 set tabstop=2
 set shiftwidth=2
 "set clipboard=unnamed
@@ -52,8 +53,10 @@ set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
+nnoremap <TAB> :bnext<cr>
+nnoremap <S-TAB> :bprevious<cr>
 nnoremap <leader>zf zfat
-nnoremap <silent><C-l> :nohlsearch<CR>
+nnoremap <C-l> :set nohlsearch!<CR>
 nnoremap Y y$
 nnoremap <silent><leader>gb :G blame<cr>
 nnoremap <silent><leader>gg :Ge:<cr>
@@ -73,6 +76,7 @@ nnoremap <leader>Y gg"+yG<c-o>
 nnoremap <leader>d "_d
 nnoremap <leader>D "_D
 vnoremap <leader>d "_d
+vnoremap <leader>D "_D
 
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
@@ -108,9 +112,10 @@ nnoremap <leader>M :clast<CR>
 nnoremap <leader>n :cn<CR>
 nnoremap <leader>m :cp<CR>
 nmap <silent> <leader>s :AutoSaveToggle<CR>
-nnoremap <c-s> :w<CR>
-nnoremap <C-Q> :q<CR>
-nnoremap <silent><C-q> :bd<CR>
+nnoremap <C-s> :w<CR>
+nnoremap <C-s>a :wa<CR>
+" nnoremap <leader>q :q<CR>
+nnoremap <silent><leader>q :bd<CR>
 nnoremap <silent><Leader>f :NERDTreeFind<CR>
 nmap - `.zz
 nmap <Leader>r :%s///gc<Left><Left><Left>
@@ -143,6 +148,8 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge
 
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
 
@@ -154,6 +161,7 @@ if empty(mapcheck('<C-W>', 'i'))
 endif
 
 inoremap <leader>: <c-o>:
+inoremap <leader>k <c-o>k
 inoremap <leader>x <c-o>"_x
 inoremap <leader>s <c-o>"_s
 inoremap <leader>d <c-o>"_d
@@ -186,8 +194,8 @@ nnoremap X "_dh
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
-vmap <Tab> >gv
-vmap <S-Tab> <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 set smartindent
 set nocompatible              " be iMproved, required
 
@@ -206,7 +214,7 @@ let g:airline#extensions#bufferline#enabled = 1
 "  call AutoHighlightToggle()
 let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 if (has("termguicolors"))
   set termguicolors
