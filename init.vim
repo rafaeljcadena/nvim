@@ -96,6 +96,7 @@ cnoremap <leader>S <cr>"_S
 "noremap N Nzzzv
 "
 "noremap <C-u> <C-u>zz
+nnoremap <leader>/ /\<\><Left><Left>
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
 nmap <leader>b :Buffers<CR>
