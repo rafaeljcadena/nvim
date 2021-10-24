@@ -58,6 +58,7 @@ nnoremap <S-TAB> :bprevious<cr>
 nnoremap <leader>zf zfat
 nnoremap <C-l> :set nohlsearch!<CR>
 nnoremap Y y$
+nnoremap <silent><leader>gb :G blame<cr>
 nnoremap <silent><leader>gg :Ge:<cr>
 nnoremap <silent><leader>d :Gvdiff<cr>
 nnoremap <leader>gt :diffget //3
@@ -80,6 +81,8 @@ vnoremap <leader>D "_D
 cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
+cnoremap <leader>v <cr>v
+cnoremap <leader>y <cr>y
 cnoremap <leader>i <cr>i
 cnoremap <leader>C <cr>"_C
 cnoremap <leader>c <cr>"_c
@@ -88,7 +91,6 @@ cnoremap <leader>D <cr>"_D
 cnoremap <leader>a <cr>a
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
-cnoremap <c-s> <cr>"_s
 cnoremap <leader>s <cr>"_s
 cnoremap <leader>S <cr>"_S
 "
@@ -97,6 +99,7 @@ cnoremap <leader>S <cr>"_S
 "
 "noremap <C-u> <C-u>zz
 nnoremap <leader>/ /\<\><Left><Left>
+nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
 nmap <leader>b :Buffers<CR>
@@ -158,6 +161,7 @@ if empty(mapcheck('<C-W>', 'i'))
   inoremap <C-W> <C-G>u<C-W>
 endif
 
+inoremap <leader>: <c-o>:
 inoremap <leader>k <c-o>k
 inoremap <leader>x <c-o>"_x
 inoremap <leader>s <c-o>"_s
@@ -183,7 +187,7 @@ inoremap <leader>h <c-o>h
 inoremap <leader>l <c-o>l
 inoremap <leader>_ <c-o>_
 inoremap <leader>y <c-o>y
-inoremap <c-s> <esc>
+inoremap <c-s> <esc><c-s>
 inoremap <c-c> <c-o>
 
 nnoremap x "_dl
