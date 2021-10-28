@@ -53,7 +53,8 @@ set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
-nnoremap <TAB> :bnext<cr>
+" nnoremap <TAB> :bnext<cr>
+nnoremap <TAB> <C-i><CR>
 nnoremap <S-TAB> :bprevious<cr>
 nnoremap <leader>zf zfat
 nnoremap <C-l> :set nohlsearch!<CR>
