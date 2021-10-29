@@ -53,6 +53,13 @@ set listchars=tab:>\ ,trail:·,extends:>,precedes:<,nbsp:+
 set ttyfast
 set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
+cnoremap <leader><TAB> <TAB>
+
+nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
+nnoremap <leader>aw :!open -a Whatsapp<cr>
+nnoremap <leader>ad :!open -a Discord<cr>
+nnoremap <leader>an :!open -a Notion<cr>
+
 nnoremap <leader><TAB> :bnext<cr>
 nnoremap <TAB> <C-i><CR>
 nnoremap <S-TAB> :bprevious<cr>
