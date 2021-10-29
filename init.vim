@@ -56,6 +56,7 @@ set autoread
 cnoremap <leader><TAB> <TAB>
 
 nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
+nnoremap <leader>ap :!open -a Spotify<cr>
 nnoremap <leader>aw :!open -a Whatsapp<cr>
 nnoremap <leader>ad :!open -a Discord<cr>
 nnoremap <leader>an :!open -a Notion<cr>
