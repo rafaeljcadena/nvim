@@ -98,6 +98,7 @@ cnoremap <leader>c <cr>"_c
 cnoremap <leader>d <cr>"_d
 cnoremap <leader>D <cr>"_D
 cnoremap <leader>a <cr>a
+cnoremap <leader>A <cr>A
 cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
 cnoremap <leader>s <cr>"_s
