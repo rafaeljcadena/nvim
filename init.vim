@@ -21,6 +21,7 @@ set nu
 set hidden
 set ruler
 set cursorline
+set splitright
 set laststatus=2
 set noshowmode
 set tabstop=2
@@ -91,6 +92,7 @@ cnoremap <c-i> <cr>i
 cnoremap <c-e> <cr>ea
 cnoremap <c-c> <cr>"_c
 cnoremap <leader>v <cr>v
+cnoremap <leader>Y <cr>Y
 cnoremap <leader>y <cr>y
 cnoremap <leader>i <cr>i
 cnoremap <leader>C <cr>"_C
