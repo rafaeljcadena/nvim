@@ -81,7 +81,7 @@ vnoremap <leader>p "_dP
 " next greatest remap ever : asbjornHaland
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG<c-o>
+nnoremap <leader>Y "+yg_
 
 nnoremap <leader>d "_d
 nnoremap <leader>D "_D
