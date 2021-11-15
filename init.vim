@@ -111,7 +111,8 @@ cnoremap <leader>S <cr>"_S
 "
 "noremap <C-u> <C-u>zz
 nnoremap <leader>/ /\<\><Left><Left>
-nnoremap <leader>b :b#<CR>
+nnoremap <leader>[ :b#<CR>
+nnoremap <leader>b :buffers<CR>:b<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
