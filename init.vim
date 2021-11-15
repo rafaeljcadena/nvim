@@ -111,7 +111,7 @@ cnoremap <leader>S <cr>"_S
 "
 "noremap <C-u> <C-u>zz
 nnoremap <leader>/ /\<\><Left><Left>
-nnoremap <leader>[ :b#<CR>
+nnoremap <silent><leader>[ :b#<CR>
 nnoremap <leader>b :buffers<CR>:b<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
@@ -220,9 +220,11 @@ let $LANG='en_US.UTF-8'
 " let g:auto_save = 1
 filetype off                  " required
 "let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#bufferline#enabled = 1
+
+" Se quiser voltar para o modo de buffers basta descomentar as 3 linhas abaixo
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline#extensions#bufferline#enabled = 1
 "let airline#extensions#tabline#show_buffers = 3
 " set the runtime path to include Vundle and initialize
 
