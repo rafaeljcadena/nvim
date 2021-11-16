@@ -187,6 +187,7 @@ inoremap <leader>W <c-o>W
 inoremap <leader>w <c-o>w
 inoremap <leader>e <c-o>e<c-o>a
 inoremap <leader>E <c-o>E<c-o>a
+inoremap <leader>u <c-o>u
 inoremap <leader>o <c-o>o
 inoremap <leader>O <c-o>O
 inoremap <leader>a <c-o>a
