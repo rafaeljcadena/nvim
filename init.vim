@@ -267,6 +267,7 @@ let g:netrw_list_hide=',\(^\|\s\s\)\zs\.\S\+'
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'mhinz/vim-signify'
 Plugin 'gruvbox-community/gruvbox'
 Plugin 'mhartington/oceanic-next'
 Plugin 'flazz/vim-colorschemes'
