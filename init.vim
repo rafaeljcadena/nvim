@@ -25,6 +25,9 @@ set splitright
 set laststatus=2
 set noshowmode
 set tabstop=2
+set breakindent
+set breakindentopt=shift:2
+set showbreak=↳
 set shiftwidth=2
 "set clipboard=unnamed
 set wildmenu
@@ -112,6 +115,7 @@ cnoremap <leader>S <cr>"_S
 "noremap <C-u> <C-u>zz
 nnoremap <leader>/ /\<\><Left><Left>
 nnoremap <silent><leader>[ :b#<CR>
+nnoremap <silent><Backspace> :b#<CR>
 nnoremap <leader>b :buffers<CR>:b<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
