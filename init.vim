@@ -185,11 +185,11 @@ nnoremap <silent><leader>I[ F[a
 
 nnoremap <silent><leader>i) f)i
 nnoremap <silent><leader>i} f}i
-nnoremap <silent><leader>i[ f]i
+nnoremap <silent><leader>i] f]i
 
 nnoremap <silent><leader>I) F)i
 nnoremap <silent><leader>I} F}i
-nnoremap <silent><leader>I[ F]i
+nnoremap <silent><leader>I] F]i
 
 " nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
