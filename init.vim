@@ -179,6 +179,11 @@ nnoremap <silent><leader>i( f(a
 nnoremap <silent><leader>i{ f{a
 nnoremap <silent><leader>i[ f[a
 
+nnoremap <silent><leader>i' f'a
+nnoremap <silent><leader>i" f"a
+nnoremap <silent><leader>I' F'i
+nnoremap <silent><leader>I" F"i
+
 nnoremap <silent><leader>I( F(a
 nnoremap <silent><leader>I{ F{a
 nnoremap <silent><leader>I[ F[a
@@ -190,6 +195,19 @@ nnoremap <silent><leader>i] f]i
 nnoremap <silent><leader>I) F)i
 nnoremap <silent><leader>I} F}i
 nnoremap <silent><leader>I] F]i
+
+inoremap <silent><leader>i{ <c-o>f{<c-o>a
+inoremap <silent><leader>i( <c-o>f(<c-o>a
+
+inoremap <silent><leader>i} <c-o>f}
+inoremap <silent><leader>i) <c-o>f)
+
+inoremap <silent><leader>i" <c-o>f"<c-o>a
+inoremap <silent><leader>i' <c-o>f'<c-o>a
+inoremap <silent><leader>I" <c-o>F"
+inoremap <silent><leader>I' <c-o>F'
+inoremap <silent><leader>I( <c-o>F(
+inoremap <silent><leader>I{ <c-o>F{
 
 " nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
