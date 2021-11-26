@@ -175,39 +175,11 @@ nnoremap cI( F(ci(
 nnoremap cI{ F{ci{
 nnoremap cI[ F[ci[
 
-nnoremap <silent><leader>i( f(a
-nnoremap <silent><leader>i{ f{a
-nnoremap <silent><leader>i[ f[a
+nnoremap c2i' 3f'ci'
+nnoremap c2i" 3f"ci"
 
-nnoremap <silent><leader>i' f'a
-nnoremap <silent><leader>i" f"a
-nnoremap <silent><leader>I' F'i
-nnoremap <silent><leader>I" F"i
-
-nnoremap <silent><leader>I( F(a
-nnoremap <silent><leader>I{ F{a
-nnoremap <silent><leader>I[ F[a
-
-nnoremap <silent><leader>i) f)i
-nnoremap <silent><leader>i} f}i
-nnoremap <silent><leader>i] f]i
-
-nnoremap <silent><leader>I) F)i
-nnoremap <silent><leader>I} F}i
-nnoremap <silent><leader>I] F]i
-
-inoremap <silent><leader>i{ <c-o>f{<c-o>a
-inoremap <silent><leader>i( <c-o>f(<c-o>a
-
-inoremap <silent><leader>i} <c-o>f}
-inoremap <silent><leader>i) <c-o>f)
-
-inoremap <silent><leader>i" <c-o>f"<c-o>a
-inoremap <silent><leader>i' <c-o>f'<c-o>a
-inoremap <silent><leader>I" <c-o>F"
-inoremap <silent><leader>I' <c-o>F'
-inoremap <silent><leader>I( <c-o>F(
-inoremap <silent><leader>I{ <c-o>F{
+nnoremap c3i' 5f'ci'
+nnoremap c3i" 5f"ci"
 
 " nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
