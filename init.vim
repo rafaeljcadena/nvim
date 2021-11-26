@@ -171,17 +171,25 @@ nnoremap ci( f(ci(
 nnoremap ci{ f{ci{
 nnoremap ci[ f[ci[
 
+nnoremap cI( F(ci(
+nnoremap cI{ F{ci{
+nnoremap cI[ F[ci[
+
 nnoremap <silent><leader>i( f(a
 nnoremap <silent><leader>i{ f{a
 nnoremap <silent><leader>i[ f[a
+
+nnoremap <silent><leader>I( F(a
+nnoremap <silent><leader>I{ F{a
+nnoremap <silent><leader>I[ F[a
 
 nnoremap <silent><leader>i) f)i
 nnoremap <silent><leader>i} f}i
 nnoremap <silent><leader>i[ f]i
 
-inoremap <silent><leader>i) <c-o>f)
-inoremap <silent><leader>i} <c-o>f}
-inoremap <silent><leader>i[ <c-o>f]
+nnoremap <silent><leader>I) F)i
+nnoremap <silent><leader>I} F}i
+nnoremap <silent><leader>I[ F]i
 
 " nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
