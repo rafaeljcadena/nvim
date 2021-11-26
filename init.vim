@@ -167,7 +167,23 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge
 
-" nnoremap <C-h> <C-w>h
+nnoremap ci( f(ci(
+nnoremap ci{ f{ci{
+nnoremap ci[ f[ci[
+
+nnoremap <silent><leader>i( f(a
+nnoremap <silent><leader>i{ f{a
+nnoremap <silent><leader>i[ f[a
+
+nnoremap <silent><leader>i) f)i
+nnoremap <silent><leader>i} f}i
+nnoremap <silent><leader>i[ f]i
+
+inoremap <silent><leader>i) <c-o>f)
+inoremap <silent><leader>i} <c-o>f}
+inoremap <silent><leader>i[ <c-o>f]
+
+" nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
 nnoremap <silent><leader>. :vertical resize +5<cr>
 nnoremap <silent><leader>, :vertical resize -5<cr>
@@ -207,7 +223,7 @@ inoremap <leader>l <c-o>l
 inoremap <leader>_ <c-o>_
 inoremap <leader>y <c-o>y
 inoremap <c-s> <esc><c-s>
-inoremap <c-c> <c-o>
+inoremap <c-c> <ESC>
 
 nnoremap x "_dl
 nnoremap X "_dh
