@@ -77,7 +77,6 @@ nnoremap <silent><leader>d :Gvdiff<cr>
 nnoremap <leader>gt :diffget //3
 nnoremap <leader>go :diffget //2
 " center view on the search result
-
 " greatest remap ever
 vnoremap <leader>p "_dP
 
@@ -117,6 +116,7 @@ nnoremap <leader>/ /\<\><Left><Left>
 nnoremap <silent><leader>[ :b#<CR>
 nnoremap <silent><Backspace> :b#<CR>
 nnoremap <leader>b :buffers<CR>:b<Space>
+nnoremap <leader>sb :vert sb<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
