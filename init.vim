@@ -107,11 +107,12 @@ cnoremap <leader>e <cr>ea
 cnoremap <leader>E <cr>Ea
 cnoremap <leader>s <cr>"_s
 cnoremap <leader>S <cr>"_S
-"
+cnoremap <leader>bs <c-u>vert sb<space>
 "noremap n nzzzv
 "noremap N Nzzzv
 "
 "noremap <C-u> <C-u>zz
+nmap :W :w
 nnoremap <leader>/ /\<\><Left><Left>
 nnoremap <silent><leader>[ :b#<CR>
 nnoremap <silent><Backspace> :b#<CR>
