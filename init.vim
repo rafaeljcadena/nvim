@@ -168,19 +168,19 @@ nnoremap <leader>gp :G pull
 nnoremap <leader>gs :G status<cr>
 nnoremap <leader>gm :G merge
 
-nnoremap ci( f(ci(
-nnoremap ci{ f{ci{
-nnoremap ci[ f[ci[
+nnoremap <leader>ci( f(ci(
+nnoremap <leader>ci{ f{ci{
+nnoremap <leader>ci[ f[ci[
 
-nnoremap cI( F(ci(
-nnoremap cI{ F{ci{
-nnoremap cI[ F[ci[
+nnoremap <leader>cI( F(ci(
+nnoremap <leader>cI{ F{ci{
+nnoremap <leader>cI[ F[ci[
 
-nnoremap c2i' 3f'ci'
-nnoremap c2i" 3f"ci"
+nnoremap <leader>c2i' 3f'ci'
+nnoremap <leader>c2i" 3f"ci"
 
-nnoremap c3i' 5f'ci'
-nnoremap c3i" 5f"ci"
+nnoremap <leader>c3i' 5f'ci'
+nnoremap <leader>c3i" 5f"ci"
 
 " nnoremap <C-h> <C-w>
 " nnoremap <C-l> <C-w>l
