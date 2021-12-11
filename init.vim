@@ -115,18 +115,17 @@ cnoremap <leader>bs <c-u>vert sb<space>
 nmap :W :w
 nnoremap <leader>/ /\<\><Left><Left>
 nnoremap <silent><leader>[ :b#<CR>
-nnoremap <silent><Backspace> :b#<CR>
 nnoremap <leader>b :buffers<CR>:b<Space>
 nnoremap <leader>sb :vert sb<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
-" nmap <leader>b :Buffers<CR>
+
 nmap <leader>l :BLines<CR>
 nmap <leader>t :BTags<CR>
 nmap <silent><leader>w :BufOnly<CR>
 nmap <C-f> :Rg<space>
-nmap <leader>c :changes<CR>
+nmap <leader>x :changes<CR>
 nnoremap <leader>N :cfirst<CR>
 nnoremap <leader>M :clast<CR>
 nnoremap <leader>n :cn<CR>
@@ -280,6 +279,10 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide=',\(^\|\s\s\)\zs\.\S\+'
+
+let g:gutentags_ctags_exclude = ['/node_modules']
+
+
 
 "
 " If you want :UltiSnipsEdit to split your window.
