@@ -251,7 +251,7 @@ filetype off                  " required
 
 "  call AutoHighlightToggle()
 let g:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
-let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['eslint', 'prettier'], 'ruby': ['rubocop'] }
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['prettier'], 'css': ['prettier'], 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 0
 
 if (has("termguicolors"))
@@ -305,6 +305,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
+"
 " Plugin 'unblevable/quick-scope'
 
 " São usados juntos
@@ -353,6 +355,10 @@ endfunction
 lua << EOF
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.solargraph.setup{}
-vim.lsp.set_log_level("debug")
+
+-- Para debuggar algum problema no LSP descomentar a linha abaixo
+-- vim.lsp.set_log_level("debug")
+-- E rodar o comando abaixo para ver o log de erro:
+-- lua vim.cmd('e'..vim.lsp.get_log_path())
 
 EOF
