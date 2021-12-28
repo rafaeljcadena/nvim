@@ -59,12 +59,14 @@ set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
 cnoremap <leader><TAB> <TAB>
 
+tnoremap <c-q> <C-\><C-n>
+
+nnoremap <leader>\ :vsplit term://zsh<cr>
 nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
 nnoremap <leader>ap :!open -a Spotify<cr>
 nnoremap <leader>aw :!open -a Whatsapp<cr>
 nnoremap <leader>ad :!open -a Discord<cr>
 nnoremap <leader>an :!open -a Notion<cr>
-
 nnoremap <leader><TAB> :bnext<cr>
 nnoremap <TAB> <C-i><CR>
 nnoremap <S-TAB> :bprevious<cr>
@@ -248,8 +250,8 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 
 "  call AutoHighlightToggle()
-let b:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
-let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], }
+let g:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['eslint', 'prettier'], 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 0
 
 if (has("termguicolors"))
@@ -318,6 +320,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'neovim/nvim-lspconfig'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -345,3 +349,10 @@ endfunction
 silent function! WINDOWS()
     return  (has('win32') || has('win64'))
 endfunction
+
+lua << EOF
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.solargraph.setup{}
+vim.lsp.set_log_level("debug")
+
+EOF
