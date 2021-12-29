@@ -323,6 +323,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'neovim/nvim-lspconfig'
+Plugin 'williamboman/nvim-lsp-installer'
 
 
 " All of your Plugins must be added before the following line
@@ -355,6 +356,14 @@ endfunction
 lua << EOF
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.solargraph.setup{}
+
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+end)
+
+-- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
 
 -- Para debuggar algum problema no LSP descomentar a linha abaixo
 -- vim.lsp.set_log_level("debug")
