@@ -59,7 +59,10 @@ set autoread
 " nnoremap <C-L> :let @/=''<cr> " clear search
 cnoremap <leader><TAB> <TAB>
 
-tnoremap <c-q> <C-\><C-n>
+" tnoremap <c-q> <C-\><C-N>
+tnoremap <c-o> <C-\><C-N>
+tnoremap <leader>q <C-\><C-N>
+tnoremap <c-k> <C-\><C-N>:bd!<cr>
 
 nnoremap <leader>\ :vsplit term://zsh<cr>
 nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
@@ -324,7 +327,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'williamboman/nvim-lsp-installer'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
