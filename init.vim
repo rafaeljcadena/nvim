@@ -62,7 +62,8 @@ cnoremap <leader><TAB> <TAB>
 " tnoremap <c-q> <C-\><C-N>
 tnoremap <c-o> <C-\><C-N>
 tnoremap <leader>q <C-\><C-N>
-tnoremap <c-k> <C-\><C-N>:bd!<cr>
+tnoremap <leader>, <C-\><C-N>:keepalt file 
+tnoremap <c-k> <c-d><C-\><C-N>:bd!<cr>
 
 nnoremap <leader>\ :vsplit term://zsh<cr>
 nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
