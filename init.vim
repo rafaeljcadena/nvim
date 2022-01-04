@@ -66,7 +66,7 @@ tnoremap <leader>, <C-\><C-N>:keepalt file
 tnoremap <c-k> <c-d><C-\><C-N>:bd!<cr>
 
 nnoremap <leader>\ :vsplit term://zsh<cr>
-nnoremap <silent><leader>ab :!open -a Brave\ Browser<cr>
+nnoremap <silent><leader>ab :!open -a Opera<cr>
 nnoremap <leader>ap :!open -a Spotify<cr>
 nnoremap <leader>aw :!open -a Whatsapp<cr>
 nnoremap <leader>ad :!open -a Discord<cr>
