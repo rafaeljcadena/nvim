@@ -326,8 +326,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'neovim/nvim-lspconfig'
-Plugin 'williamboman/nvim-lsp-installer'
+" Plugin 'neovim/nvim-lspconfig'
+" Plugin 'williamboman/nvim-lsp-installer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -356,21 +356,22 @@ silent function! WINDOWS()
     return  (has('win32') || has('win64'))
 endfunction
 
-lua << EOF
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.solargraph.setup{}
+" MANTER SE FOR USAR LSP
+" lua << EOF
+" require'lspconfig'.eslint.setup{}
+" require'lspconfig'.solargraph.setup{}
 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+" local lsp_installer = require("nvim-lsp-installer")
+" lsp_installer.on_server_ready(function(server)
+"   local opts = {}
+"   server:setup(opts)
+" end)
 
--- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
+" -- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
 
--- Para debuggar algum problema no LSP descomentar a linha abaixo
--- vim.lsp.set_log_level("debug")
--- E rodar o comando abaixo para ver o log de erro:
--- lua vim.cmd('e'..vim.lsp.get_log_path())
+" -- Para debuggar algum problema no LSP descomentar a linha abaixo
+" -- vim.lsp.set_log_level("debug")
+" -- E rodar o comando abaixo para ver o log de erro:
+" -- lua vim.cmd('e'..vim.lsp.get_log_path())
 
-EOF
+" EOF
