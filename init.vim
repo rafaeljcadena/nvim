@@ -295,7 +295,13 @@ let g:gutentags_ctags_exclude = ['/node_modules']
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'mhinz/vim-signify'
+
+
+" Plugin 'mhinz/vim-signify'
+
+" Testar essa gitgutter pra substituir o signify
+" Plugin 'airblade/gitgutter'
+
 Plugin 'gruvbox-community/gruvbox'
 " Plugin 'mhartington/oceanic-next'
 " Plugin 'flazz/vim-colorschemes'
