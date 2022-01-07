@@ -254,7 +254,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 
 "  call AutoHighlightToggle()
-let g:ale_linters = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
+let g:ale_linters = { 'ruby': ['rubocop', 'solargraph'], 'javascript': ['eslint'] }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['prettier'], 'css': ['prettier'], 'ruby': ['rubocop'] }
 let g:ale_fix_on_save = 0
 
@@ -279,12 +279,12 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Trigger a highlight only when pressing f and F.
 " let g:qs_highlight_on_keys = ['f', 'F']
 
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide=',\(^\|\s\s\)\zs\.\S\+'
+" let g:netrw_banner=0
+" let g:netrw_browse_split=4
+" let g:netrw_altv=1
+" let g:netrw_liststyle=3
+" let g:netrw_list_hide=netrw_gitignore#Hide()
+" let g:netrw_list_hide=',\(^\|\s\s\)\zs\.\S\+'
 
 let g:gutentags_ctags_exclude = ['/node_modules']
 
@@ -297,11 +297,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'gruvbox-community/gruvbox'
-Plugin 'mhartington/oceanic-next'
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'mhartington/oceanic-next'
+" Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin '907th/vim-auto-save'
+" Plugin '907th/vim-auto-save'
 Plugin 'preservim/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -323,7 +323,7 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nvim-lualine/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
-Plugin 'kyazdani42/nvim-web-devicons'
+" Plugin 'kyazdani42/nvim-web-devicons'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -380,8 +380,10 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'gruvbox',
-    component_separators = { left = '>', right = '<'},
-    section_separators = '',
+    --component_separators = { left = '>', right = '<'},
+    --section_separators = '',
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {},
     always_divide_middle = true,
   },
