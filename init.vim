@@ -262,8 +262,8 @@ if (has("termguicolors"))
   set termguicolors
  endif
 "colorscheme OceanicNext
-let g:oceanic_next_terminal_italic = 1
-let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" let g:oceanic_next_terminal_bold = 1
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
@@ -319,8 +319,11 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plugin 'kyazdani42/nvim-web-devicons'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -328,9 +331,14 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'neovim/nvim-lspconfig'
 " Plugin 'williamboman/nvim-lsp-installer'
+" Plugin 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 
 " Força os arquivos javascript a ficar com a syntax javascriptreact para
@@ -357,21 +365,52 @@ silent function! WINDOWS()
 endfunction
 
 " MANTER SE FOR USAR LSP
-" lua << EOF
-" require'lspconfig'.eslint.setup{}
-" require'lspconfig'.solargraph.setup{}
+lua << END
+-- require'lspconfig'.eslint.setup{}
+-- require'lspconfig'.solargraph.setup{}
+-- 
+-- local lsp_installer = require("nvim-lsp-installer")
+-- lsp_installer.on_server_ready(function(server)
+--   local opts = {}
+--   server:setup(opts)
+-- end)
 
-" local lsp_installer = require("nvim-lsp-installer")
-" lsp_installer.on_server_ready(function(server)
-"   local opts = {}
-"   server:setup(opts)
-" end)
+-- Plugin LuaLine
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'gruvbox',
+    component_separators = { left = '>', right = '<'},
+    section_separators = '',
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+--
 
-" -- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
+-- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
 
-" -- Para debuggar algum problema no LSP descomentar a linha abaixo
-" -- vim.lsp.set_log_level("debug")
-" -- E rodar o comando abaixo para ver o log de erro:
-" -- lua vim.cmd('e'..vim.lsp.get_log_path())
+-- Para debuggar algum problema no LSP descomentar a linha abaixo
+-- vim.lsp.set_log_level("debug")
+-- E rodar o comando abaixo para ver o log de erro:
+-- lua vim.cmd('e'..vim.lsp.get_log_path())
 
-" EOF
+END
