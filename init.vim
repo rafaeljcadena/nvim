@@ -335,6 +335,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'EdenEast/nightfox.nvim'
 " Plugin 'neovim/nvim-lspconfig'
 " Plugin 'williamboman/nvim-lsp-installer'
 " Plugin 'autozimu/LanguageClient-neovim', {
@@ -353,7 +354,8 @@ augroup javascript_folding
     au!
     au FileType javascript.jsx setlocal filetype=javascriptreact
 augroup END
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme nightfox
 
 highlight Cursor guifg=white guibg=Black
 " highlight iCursor guifg=white guibg=DarkMagenta
@@ -385,9 +387,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
-    --component_separators = { left = '>', right = '<'},
-    --section_separators = '',
+    theme = "nightfox",
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},
