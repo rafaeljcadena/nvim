@@ -354,8 +354,8 @@ augroup javascript_folding
     au!
     au FileType javascript.jsx setlocal filetype=javascriptreact
 augroup END
-" colorscheme gruvbox
-colorscheme nightfox
+colorscheme gruvbox
+" colorscheme nordfox
 
 highlight Cursor guifg=white guibg=Black
 " highlight iCursor guifg=white guibg=DarkMagenta
@@ -387,7 +387,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = "nightfox",
+    theme = "gruvbox",
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},
@@ -397,7 +397,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
