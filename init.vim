@@ -8,6 +8,8 @@ set wildignore+=**/node_modules/*
 set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
+set tags=tags
+set path=.
 
 set encoding=utf-8
 "set number relativenumber
@@ -126,6 +128,11 @@ nnoremap <leader>sb :vert sb<Space>
 nnoremap <c-a> :ALEFix
 nnoremap <Leader>p :Files<CR>
 nnoremap <C-P> :GFiles<CR>
+" nnoremap <silent><c-p> :lua require('telescope.builtin').find_files()<cr>
+" nnoremap <silent><leader>j :lua require('telescope.builtin').oldfiles()<cr>
+" nnoremap <silent><leader>t :lua require('telescope.builtin').current_buffer_tags()<cr>
+
+
 
 nmap <leader>l :BLines<CR>
 nmap <leader>t :BTags<CR>
@@ -286,7 +293,69 @@ let g:indent_guides_enable_on_vim_startup = 1
 " let g:netrw_list_hide=netrw_gitignore#Hide()
 " let g:netrw_list_hide=',\(^\|\s\s\)\zs\.\S\+'
 
-let g:gutentags_ctags_exclude = ['/node_modules']
+" let g:gutentags_ctags_exclude = ['/node_modules']
+let g:gutentags_cache_dir = expand('~/.cache/nvim')
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['.git']
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_exclude = [
+      \ '*.git', '*.svg', '*.hg',
+      \ '*/tests/*',
+      \ 'build',
+      \ 'dist',
+      \ '*sites/*/files/*',
+      \ 'bin',
+      \ 'node_modules',
+      \ 'bower_components',
+      \ 'cache',
+      \ 'compiled',
+      \ 'docs',
+      \ 'example',
+      \ 'bundle',
+      \ 'vendor',
+      \ '*.md',
+      \ '*-lock.json',
+      \ '*.lock',
+      \ '*bundle*.js',
+      \ '*build*.js',
+      \ '.*rc*',
+      \ '*.json',
+      \ '*.min.*',
+      \ '*.map',
+      \ '*.bak',
+      \ '*.zip',
+      \ '*.pyc',
+      \ '*.class',
+      \ '*.sln',
+      \ '*.Master',
+      \ '*.csproj',
+      \ '*.tmp',
+      \ '*.csproj.user',
+      \ '*.cache',
+      \ '*.pdb',
+      \ 'tags*',
+      \ 'cscope.*',
+      \ '*.css',
+      \ '*.less',
+      \ '*.scss',
+      \ '*.exe', '*.dll',
+      \ '*.mp3', '*.ogg', '*.flac',
+      \ '*.swp', '*.swo',
+      \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
+      \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+      \ '.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
+      \ ]
+
+
+
+
 
 
 
@@ -312,7 +381,11 @@ Plugin 'preservim/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+" Plugin 'nvim-lua/plenary.nvim'
+" Plugin 'nvim-telescope/telescope.nvim'
+" Plugin 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plugin 'pangloss/vim-javascript'
+Plugin 'kyazdani42/nvim-web-devicons'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
@@ -412,6 +485,31 @@ require('lualine').setup {
   tabline = {},
   extensions = {}
 }
+
+-- TELESCOPE
+-- ao instalar rodar o comando :checkhealth telescope
+-- require('telescope').setup({
+-- defaults = {
+--   layout_config = {
+--     vertical = { width = 0.5 }
+--     -- other layout configuration here
+--     },
+--   -- other defaults configuration here
+--   },
+--   -- other configuration values here
+--   extensions = {
+--     fzf = {
+--       fuzzy = true,                    -- false will only do exact matching
+--       override_generic_sorter = true,  -- override the generic sorter
+--       override_file_sorter = true,     -- override the file sorter
+--       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+--                                        -- the default case_mode is "smart_case"
+--     }
+--   }
+-- })
+-- -- Precisa entrar na pasta do telescope-fzf-native e rodar o comando "make"
+-- require('telescope').load_extension('fzf')
+
 --
 
 -- lua nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
